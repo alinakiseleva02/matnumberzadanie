@@ -1,12 +1,7 @@
-from rest_framework.serializers import ModelSerializer
-from . import models
+from rest_framework import serializers
+from .models import Number
 
-class ManufacturerSerializer(ModelSerializer):
+class NumberSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.Manufacturer
-        fields = ['name', 'country']
-
-class ProductSerializer(ModelSerializer):
-    class Meta:
-        model = models.Product
-        fields = ['name', 'price', 'manufacturer']
+        model = Number
+        fields = '__all__'
